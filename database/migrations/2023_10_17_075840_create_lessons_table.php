@@ -14,9 +14,9 @@ return new class extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id('lesson_id');
-            $table->string('status');
-            $table->foreignId('subject_id')->references('subject_id')->on('subjects');
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->string('status')->nullable();
+            $table->foreignId('subject_id')->nullable()->references('subject_id')->on('subjects');
+            $table->foreignId('user_id')->default()->references('id')->on('users');
             $table->timestamps();
         });
 

@@ -28,8 +28,8 @@ class LessonController extends Controller
     public function store(Request $request)
     {
         $lesson = new Lesson();
-        $lesson->name = $request->name;
-        $lesson->subject = $request->subject;
+        $lesson->status = $request->status;
+        $lesson->subject_id = $request->subject_id;
         $lesson->save();
         return redirect('/lesson/list');
     }
@@ -37,8 +37,8 @@ class LessonController extends Controller
     public function update(Request $request, $id)
     {
         $lesson = Lesson::find($id);
-        $lesson->name = $request->name;
-        $lesson->subject = $request->subject;
+        $lesson->status = $request->status;
+        $lesson->subject_id = $request->subject_id;
         $lesson->save();
         return redirect('/lesson/list');
     }
