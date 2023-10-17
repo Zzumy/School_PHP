@@ -12,8 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lesson', function (Blueprint $table) {
-            $table->id('subject_id');
+        Schema::create('lessons', function (Blueprint $table) {
+            $table->id('lesson_id');
             $table->string('status');
             $table->foreignId('subject_id')->references('id')->on('subjects');
             $table->foreignId('user_id')->references('id')->on('users');
